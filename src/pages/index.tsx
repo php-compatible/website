@@ -19,7 +19,7 @@ const PackageList: PackageItem[] = [
     name: 'enum',
     description: 'PHP 8-style enums for PHP 7.2+ with migration tools',
     github: 'https://github.com/php-compatible/enum',
-    docs: '/docs/enum',
+    docs: '/docs/category/enum',
   },
 ];
 
