@@ -5,6 +5,10 @@ sidebar_label: Request Handling
 
 # Request Handling
 
+:::tip PSR-7 Style
+Modern routing supports automatic request injection. Add a `$request` parameter to your handler and use methods like `$request->getParsedBody()`, `$request->getQueryParam()`, and `$request->getHeaderLine()`. See [PSR-7 Style](./psr7-style) for details.
+:::
+
 ## JSON Body
 
 Parse JSON request body with `json_body()`:

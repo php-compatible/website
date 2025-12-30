@@ -5,6 +5,10 @@ sidebar_label: Request Handling
 
 # Request Handling
 
+:::tip PSR-7 Style
+For a more testable, object-oriented approach to request handling, see [PSR-7 Style](./psr7-style) which provides `ServerRequest` with methods like `getParsedBody()`, `getQueryParam()`, and `getHeaderLine()`.
+:::
+
 ## JSON Body
 
 Parse JSON request body with `json_body()`:
