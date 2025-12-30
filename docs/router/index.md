@@ -26,12 +26,6 @@ You're maintaining a PHP application that's been around for years. The codebase 
 
 This router meets you where you are. Whether you're on PHP 5.5 or PHP 8.5, you get the same clean, expressive API. No conditional syntax, no version-specific features — just routing that works.
 
-## Installation
-
-```bash
-composer require php-compatible/router
-```
-
 ## Features
 
 - **PHP 5.5 - 8.5 Compatible** — Same API across all versions
