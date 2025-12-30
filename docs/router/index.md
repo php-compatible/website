@@ -9,6 +9,7 @@ slug: /category/router
 [![CI](https://github.com/php-compatible/router/actions/workflows/ci.yml/badge.svg)](https://github.com/php-compatible/router/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/php-compatible/router/branch/main/graph/badge.svg)](https://codecov.io/gh/php-compatible/router)
 [![PHP Version](https://img.shields.io/badge/php-5.5%20--%208.5-8892BF.svg)](https://php.net/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/php-compatible/router/blob/main/LICENSE)
 
 **Modern routing for legacy PHP applications** — Write clean routes today, upgrade to modern frameworks tomorrow.
 
