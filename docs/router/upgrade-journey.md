@@ -91,8 +91,8 @@ class ShowUser
         $user = $this->findUser($id);
 
         return $user
-            ? JsonResponse::ok(array('user' => $user))
-            : JsonResponse::notFound(array('error' => 'User not found'));
+            ? JsonResponse::response(HTTP_OK, array('user' => $user))
+            : JsonResponse::response(HTTP_NOT_FOUND, array('error' => 'User not found'));
     }
 }
 

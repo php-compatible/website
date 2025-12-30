@@ -72,7 +72,7 @@ Router::run(function() {
         Router::post('/users', function() {
             $data = json_body();
             $user = create_user($data);
-            return JsonResponse::created(array('user' => $user));
+            return JsonResponse::response(HTTP_CREATED, array('user' => $user));
         });
 
         // PUT /api/users/123 - Update
@@ -85,7 +85,7 @@ Router::run(function() {
         // DELETE /api/users/123 - Delete
         Router::delete('/users/:id', function() {
             delete_user($_GET[':id']);
-            return JsonResponse::noContent();
+            return JsonResponse::response(HTTP_NO_CONTENT);
         });
     });
 });

@@ -68,7 +68,7 @@ use PhpCompatible\Router\JsonResponse;
 router(function() {
     route(method(GET), url_path('/api/users'), function() {
         $users = get_all_users();
-        $response = JsonResponse::ok(array('users' => $users));
+        $response = JsonResponse::response(HTTP_OK, array('users' => $users));
         $response->send();
     });
 
@@ -77,29 +77,29 @@ router(function() {
         $data = $request->getParsedBody();
 
         if (empty($data['name'])) {
-            $response = JsonResponse::badRequest(array('error' => 'Name required'));
+            $response = JsonResponse::response(HTTP_BAD_REQUEST, array('error' => 'Name required'));
             $response->send();
             stop();
         }
 
         $user = create_user($data);
-        $response = JsonResponse::created(array('user' => $user));
+        $response = JsonResponse::response(HTTP_CREATED, array('user' => $user));
         $response->send();
     });
 });
 ```
 
-### Factory Methods
+### Common Status Codes
 
 ```php
-JsonResponse::ok($data);           // 200
-JsonResponse::created($data);      // 201
-JsonResponse::noContent();         // 204
-JsonResponse::badRequest($data);   // 400
-JsonResponse::unauthorized($data); // 401
-JsonResponse::forbidden($data);    // 403
-JsonResponse::notFound($data);     // 404
-JsonResponse::serverError($data);  // 500
+JsonResponse::response(HTTP_OK, $data);                    // 200
+JsonResponse::response(HTTP_CREATED, $data);              // 201
+JsonResponse::response(HTTP_NO_CONTENT);                  // 204
+JsonResponse::response(HTTP_BAD_REQUEST, $data);          // 400
+JsonResponse::response(HTTP_UNAUTHORIZED, $data);         // 401
+JsonResponse::response(HTTP_FORBIDDEN, $data);            // 403
+JsonResponse::response(HTTP_NOT_FOUND, $data);            // 404
+JsonResponse::response(HTTP_INTERNAL_SERVER_ERROR, $data); // 500
 ```
 
 ## HtmlResponse
@@ -120,14 +120,16 @@ router(function() {
         $id = $request->getRouteParam(':id');
         $user = get_user($id);
 
-        $response = HtmlResponse::view(__DIR__ . '/views/user.php', array(
-            'user' => $user,
-            'title' => 'User Profile'
-        ));
+        $html = render_template('user.php', array('user' => $user));
+        $response = HtmlResponse::response(HTTP_OK, $html);
         $response->send();
     });
 });
 ```
+
+:::tip Templates
+For a PHP 5.5+ compatible templating solution, see [php-compatible/templates](/docs/category/templates).
+:::
 
 ## Single Action Controllers
 
@@ -145,10 +147,10 @@ class ShowUser
         $user = $this->findUser($id);
 
         if (!$user) {
-            return JsonResponse::notFound(array('error' => 'User not found'));
+            return JsonResponse::response(HTTP_NOT_FOUND, array('error' => 'User not found'));
         }
 
-        return JsonResponse::ok(array('user' => $user));
+        return JsonResponse::response(HTTP_OK, array('user' => $user));
     }
 
     private function findUser($id)
@@ -173,7 +175,7 @@ router(function() {
     route(method(GET), url_path('/api/users'), function() {
         $request = new ServerRequest();
         $page = $request->getQueryParam('page', 1);
-        $response = JsonResponse::ok(array('users' => array(), 'page' => $page));
+        $response = JsonResponse::response(HTTP_OK, array('users' => array(), 'page' => $page));
         $response->send();
     });
 

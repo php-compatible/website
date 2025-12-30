@@ -48,7 +48,7 @@ Router::run(function() {
         $user = verify_token($token);
 
         if (!$user || $user['role'] !== 'admin') {
-            return JsonResponse::forbidden(array('error' => 'Admin access required'));
+            return JsonResponse::response(HTTP_FORBIDDEN, array('error' => 'Admin access required'));
         }
 
         Router::get('/dashboard', function() {
@@ -57,7 +57,7 @@ Router::run(function() {
 
         Router::delete('/users/:id', function() {
             delete_user($_GET[':id']);
-            return JsonResponse::noContent();
+            return JsonResponse::response(HTTP_NO_CONTENT);
         });
     });
 });

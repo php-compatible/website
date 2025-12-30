@@ -50,7 +50,7 @@ class CreateUser
     {
         $data = $request->getParsedBody();
         $user = $this->db->insert('users', $data);
-        return JsonResponse::created(array('user' => $user));
+        return JsonResponse::response(HTTP_CREATED, array('user' => $user));
     }
 }
 
@@ -75,10 +75,10 @@ class UpdateUser
         $user = update_user($id, $data);
 
         if (!$user) {
-            return JsonResponse::notFound(array('error' => 'User not found'));
+            return JsonResponse::response(HTTP_NOT_FOUND, array('error' => 'User not found'));
         }
 
-        return JsonResponse::ok(array('user' => $user));
+        return JsonResponse::response(HTTP_OK, array('user' => $user));
     }
 }
 
@@ -107,7 +107,7 @@ class UserController
     {
         $data = json_body();
         $user = create_user($data);
-        return JsonResponse::created(array('user' => $user));
+        return JsonResponse::response(HTTP_CREATED, array('user' => $user));
     }
 
     public static function update()
@@ -121,7 +121,7 @@ class UserController
     {
         $id = $_GET[':id'];
         delete_user($id);
-        return JsonResponse::noContent();
+        return JsonResponse::response(HTTP_NO_CONTENT);
     }
 }
 

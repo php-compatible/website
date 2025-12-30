@@ -17,11 +17,11 @@ Router::post('/api/users', function() {
     $data = json_body();
 
     if (empty($data['name'])) {
-        return JsonResponse::badRequest(array('error' => 'Name required'));
+        return JsonResponse::response(HTTP_BAD_REQUEST, array('error' => 'Name required'));
     }
 
     $user = create_user($data);
-    return JsonResponse::created(array('user' => $user));
+    return JsonResponse::response(HTTP_CREATED, array('user' => $user));
 });
 ```
 
@@ -47,7 +47,7 @@ Handle file uploads with `has_file()`, `file_body()`, and `move_file()`:
 ```php
 Router::post('/upload', function() {
     if (!has_file('document')) {
-        return JsonResponse::badRequest(array('error' => 'No file uploaded'));
+        return JsonResponse::response(HTTP_BAD_REQUEST, array('error' => 'No file uploaded'));
     }
 
     $file = file_body('document');
@@ -66,7 +66,7 @@ Router::get('/api/protected', function() {
     $auth = request_header('Authorization');
 
     if (empty($auth)) {
-        return JsonResponse::unauthorized(array('error' => 'Unauthorized'));
+        return JsonResponse::response(HTTP_UNAUTHORIZED, array('error' => 'Unauthorized'));
     }
 
     return array('data' => 'secret');

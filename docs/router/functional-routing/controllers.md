@@ -56,7 +56,7 @@ class ShowUser
     public function __invoke(ServerRequest $request)
     {
         $id = $request->getRouteParam(':id');
-        return JsonResponse::ok(array('user_id' => $id));
+        return JsonResponse::response(HTTP_OK, array('user_id' => $id));
     }
 }
 

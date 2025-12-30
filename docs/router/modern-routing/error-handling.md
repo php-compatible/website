@@ -47,24 +47,24 @@ Router::get('/users/:id', function() {
     $user = find_user($_GET[':id']);
 
     if (!$user) {
-        return JsonResponse::notFound(array('error' => 'User not found'));
+        return JsonResponse::response(HTTP_NOT_FOUND, array('error' => 'User not found'));
     }
 
-    return JsonResponse::ok(array('user' => $user));
+    return JsonResponse::response(HTTP_OK, array('user' => $user));
 });
 
 Router::post('/users', function() {
     $data = json_body();
 
     if (empty($data['email'])) {
-        return JsonResponse::badRequest(array(
+        return JsonResponse::response(HTTP_BAD_REQUEST, array(
             'error' => 'Validation failed',
             'fields' => array('email' => 'Email is required')
         ));
     }
 
     $user = create_user($data);
-    return JsonResponse::created(array('user' => $user));
+    return JsonResponse::response(HTTP_CREATED, array('user' => $user));
 });
 ```
 
@@ -85,14 +85,14 @@ Router::post('/users', function() {
     }
 
     if (!empty($errors)) {
-        return JsonResponse::badRequest(array(
+        return JsonResponse::response(HTTP_BAD_REQUEST, array(
             'error' => 'Validation failed',
             'fields' => $errors
         ));
     }
 
     $user = create_user($data);
-    return JsonResponse::created(array('user' => $user));
+    return JsonResponse::response(HTTP_CREATED, array('user' => $user));
 });
 ```
 
@@ -105,12 +105,12 @@ Router::get('/risky', function() {
         return array('result' => $result);
     } catch (DatabaseException $e) {
         error_log('Database error: ' . $e->getMessage());
-        return JsonResponse::serverError(array(
+        return JsonResponse::response(HTTP_INTERNAL_SERVER_ERROR, array(
             'error' => 'Database temporarily unavailable'
         ));
     } catch (Exception $e) {
         error_log('Error: ' . $e->getMessage());
-        return JsonResponse::serverError(array(
+        return JsonResponse::response(HTTP_INTERNAL_SERVER_ERROR, array(
             'error' => 'Something went wrong'
         ));
     }

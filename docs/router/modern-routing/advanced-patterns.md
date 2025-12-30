@@ -186,16 +186,16 @@ Router::run(function() {
             $data = json_body();
 
             if (empty($data['email'])) {
-                return JsonResponse::badRequest(array('error' => 'Email required'));
+                return JsonResponse::response(HTTP_BAD_REQUEST, array('error' => 'Email required'));
             }
 
             $user = create_user($data);
-            return JsonResponse::created(array('user' => $user));
+            return JsonResponse::response(HTTP_CREATED, array('user' => $user));
         });
 
         Router::delete('/users/:id', function() {
             delete_user($_GET[':id']);
-            return JsonResponse::noContent();
+            return JsonResponse::response(HTTP_NO_CONTENT);
         });
     });
 

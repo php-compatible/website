@@ -95,7 +95,7 @@ Router::run(function() {
     // POST with JSON body
     Router::post('/api/users', function($request) {
         $data = $request->getParsedBody();
-        return JsonResponse::created(array('user' => $data));
+        return JsonResponse::response(HTTP_CREATED, array('user' => $data));
     });
 });
 ```

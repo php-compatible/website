@@ -81,10 +81,10 @@ class ShowUser
         $user = get_user($id);
 
         if (!$user) {
-            return JsonResponse::notFound(array('error' => 'User not found'));
+            return JsonResponse::response(HTTP_NOT_FOUND, array('error' => 'User not found'));
         }
 
-        return JsonResponse::ok(array('user' => $user));
+        return JsonResponse::response(HTTP_OK, array('user' => $user));
     }
 }
 

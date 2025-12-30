@@ -68,7 +68,7 @@ Router::run(function() {
 
     // Catch-all last
     Router::get('*', function() {
-        return JsonResponse::notFound(array('error' => 'Not found'));
+        return JsonResponse::response(HTTP_NOT_FOUND, array('error' => 'Not found'));
     });
 });
 ```

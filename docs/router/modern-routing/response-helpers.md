@@ -41,35 +41,35 @@ Router::get('/page', function() {
 use PhpCompatible\Router\JsonResponse;
 
 Router::get('/api/users', function() {
-    return JsonResponse::ok(array('users' => array()));
+    return JsonResponse::response(HTTP_OK, array('users' => array()));
 });
 
 Router::post('/api/users', function() {
     $data = json_body();
     $user = create_user($data);
-    return JsonResponse::created(array('user' => $user));
+    return JsonResponse::response(HTTP_CREATED, array('user' => $user));
 });
 
 Router::get('/api/users/:id', function() {
     $user = find_user($_GET[':id']);
     if (!$user) {
-        return JsonResponse::notFound(array('error' => 'User not found'));
+        return JsonResponse::response(HTTP_NOT_FOUND, array('error' => 'User not found'));
     }
-    return JsonResponse::ok(array('user' => $user));
+    return JsonResponse::response(HTTP_OK, array('user' => $user));
 });
 ```
 
 ### Available JsonResponse Methods
 
 ```php
-JsonResponse::ok($data);              // 200
-JsonResponse::created($data);          // 201
-JsonResponse::noContent();             // 204
-JsonResponse::badRequest($data);       // 400
-JsonResponse::unauthorized($data);     // 401
-JsonResponse::forbidden($data);        // 403
-JsonResponse::notFound($data);         // 404
-JsonResponse::serverError($data);      // 500
+JsonResponse::response(HTTP_OK, $data);              // 200
+JsonResponse::response(HTTP_CREATED, $data);          // 201
+JsonResponse::response(HTTP_NO_CONTENT);             // 204
+JsonResponse::response(HTTP_BAD_REQUEST, $data);       // 400
+JsonResponse::response(HTTP_UNAUTHORIZED, $data);     // 401
+JsonResponse::response(HTTP_FORBIDDEN, $data);        // 403
+JsonResponse::response(HTTP_NOT_FOUND, $data);         // 404
+JsonResponse::response(HTTP_INTERNAL_SERVER_ERROR, $data);      // 500
 ```
 
 ## HtmlResponse Objects
@@ -82,12 +82,17 @@ Router::get('/page', function() {
 });
 
 Router::get('/view', function() {
-    return HtmlResponse::view('/path/to/template.php', array(
+    $html = render_template('page.php', array(
         'title' => 'My Page',
         'user' => get_current_user()
     ));
+    return HtmlResponse::response(HTTP_OK, $html);
 });
 ```
+
+:::tip Templates
+For a PHP 5.5+ compatible templating solution, see [php-compatible/templates](/docs/category/templates).
+:::
 
 ## File Downloads
 
