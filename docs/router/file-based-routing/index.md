@@ -75,15 +75,15 @@ file_router(function() {
 
 ## Topics
 
-- [Getting Started](./getting-started) - Installation and server configuration
-- [HTTP Methods](./http-methods) - Match GET, POST, PUT, DELETE, etc.
-- [URL Matching](./url-matching) - Static paths and parameters
-- [Route Groups](./route-groups) - Organize routes with prefixes
-- [Request Handling](./request-handling) - JSON, forms, files, headers
-- [Response Helpers](./response-helpers) - JSON, HTML, downloads
-- [Error Handling](./error-handling) - Exceptions and error responses
-- [Middleware](./middleware) - Authentication, logging, etc.
-- [Controllers](./controllers) - Closures, classes, and invokables
-- [Server Configuration](./server-config) - Detailed server setup
-- [PSR-7 Style](./psr7-style) - Request/Response objects
-- [Static Files](./static-files) - Serving static assets
+- [Getting Started](getting-started) - Installation and server configuration
+- [HTTP Methods](http-methods) - Match GET, POST, PUT, DELETE, etc.
+- [URL Matching](url-matching) - Static paths and parameters
+- [Route Groups](route-groups) - Organize routes with prefixes
+- [Request Handling](request-handling) - JSON, forms, files, headers
+- [Response Helpers](response-helpers) - JSON, HTML, downloads
+- [Error Handling](error-handling) - Exceptions and error responses
+- [Middleware](middleware) - Authentication, logging, etc.
+- [Controllers](controllers) - Closures, classes, and invokables
+- [Server Configuration](server-config) - Detailed server setup
+- [PSR-7 Style](psr7-style) - Request/Response objects
+- [Static Files](static-files) - Serving static assets

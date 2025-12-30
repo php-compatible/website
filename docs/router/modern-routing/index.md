@@ -69,15 +69,15 @@ Router::run(function() {
 
 ## Topics
 
-- [Getting Started](./getting-started) - Installation and server configuration
-- [HTTP Methods](./http-methods) - GET, POST, PUT, DELETE, etc.
-- [URL Matching](./url-matching) - Static paths and parameters
-- [Route Groups](./route-groups) - Organize routes with prefixes
-- [Request Handling](./request-handling) - JSON, forms, files, headers
-- [Response Helpers](./response-helpers) - JSON, HTML, automatic conversion
-- [Error Handling](./error-handling) - Exceptions and error responses
-- [Middleware](./middleware) - Authentication, logging, etc.
-- [Controllers](./controllers) - Closures, classes, and invokables
-- [Advanced Patterns](./advanced-patterns) - Subsites, redirects, organization
-- [PSR-7 Style](./psr7-style) - Full Request/Response reference
-- [Static Files](./static-files) - Serving static assets
+- [Getting Started](getting-started) - Installation and server configuration
+- [HTTP Methods](http-methods) - GET, POST, PUT, DELETE, etc.
+- [URL Matching](url-matching) - Static paths and parameters
+- [Route Groups](route-groups) - Organize routes with prefixes
+- [Request Handling](request-handling) - JSON, forms, files, headers
+- [Response Helpers](response-helpers) - JSON, HTML, automatic conversion
+- [Error Handling](error-handling) - Exceptions and error responses
+- [Middleware](middleware) - Authentication, logging, etc.
+- [Controllers](controllers) - Closures, classes, and invokables
+- [Advanced Patterns](advanced-patterns) - Subsites, redirects, organization
+- [PSR-7 Style](psr7-style) - Full Request/Response reference
+- [Static Files](static-files) - Serving static assets

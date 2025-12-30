@@ -40,6 +40,6 @@ This router meets you where you are. Whether you're on PHP 5.5 or PHP 8.5, you g
 
 | Approach | Best For | Style |
 |----------|----------|-------|
-| [File-Based Routing](./file-based-routing) | Legacy projects with existing PHP files | `file_router()` in each file |
-| [Functional Routing](./functional-routing) | Full control, centralized routes | `router()`, `route()`, `url_path()` |
-| [Modern Routing](./modern-routing) | Clean syntax, new projects | `Router::get()`, `Router::post()` |
+| [File-Based Routing](/docs/router/file-based-routing) | Legacy projects with existing PHP files | `file_router()` in each file |
+| [Functional Routing](/docs/router/functional-routing) | Full control, centralized routes | `router()`, `route()`, `url_path()` |
+| [Modern Routing](/docs/router/modern-routing) | Clean syntax, new projects | `Router::get()`, `Router::post()` |
