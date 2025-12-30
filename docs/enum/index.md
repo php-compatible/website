@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Enum
+# Getting Started
 
 [![CI](https://github.com/php-compatible/enum/actions/workflows/ci.yml/badge.svg)](https://github.com/php-compatible/enum/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/php-compatible/enum/branch/main/graph/badge.svg)](https://codecov.io/gh/php-compatible/enum)
