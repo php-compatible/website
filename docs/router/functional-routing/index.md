@@ -92,15 +92,15 @@ routerGroup('/api', function() {
 
 ## Topics
 
-- [Getting Started](getting-started) - Installation and server configuration
-- [HTTP Methods](http-methods) - Match GET, POST, PUT, DELETE, etc.
-- [URL Matching](url-matching) - Static paths, wildcards, and parameters
-- [Route Groups](route-groups) - Organize routes with prefixes
-- [Request Handling](request-handling) - JSON, forms, files, headers
-- [Response Helpers](response-helpers) - JSON, HTML, downloads
-- [Error Handling](error-handling) - Exceptions and error responses
-- [Middleware](middleware) - Authentication, logging, etc.
-- [Controllers](controllers) - Closures, classes, and invokables
-- [Advanced Patterns](advanced-patterns) - Conditionals, priority, subsites
-- [PSR-7 Style](psr7-style) - Request/Response objects
-- [Static Files](static-files) - Serving static assets
+- [Getting Started](/docs/router/functional-routing/getting-started) - Installation and server configuration
+- [HTTP Methods](/docs/router/functional-routing/http-methods) - Match GET, POST, PUT, DELETE, etc.
+- [URL Matching](/docs/router/functional-routing/url-matching) - Static paths, wildcards, and parameters
+- [Route Groups](/docs/router/functional-routing/route-groups) - Organize routes with prefixes
+- [Request Handling](/docs/router/functional-routing/request-handling) - JSON, forms, files, headers
+- [Response Helpers](/docs/router/functional-routing/response-helpers) - JSON, HTML, downloads
+- [Error Handling](/docs/router/functional-routing/error-handling) - Exceptions and error responses
+- [Middleware](/docs/router/functional-routing/middleware) - Authentication, logging, etc.
+- [Controllers](/docs/router/functional-routing/controllers) - Closures, classes, and invokables
+- [Advanced Patterns](/docs/router/functional-routing/advanced-patterns) - Conditionals, priority, subsites
+- [PSR-7 Style](/docs/router/functional-routing/psr7-style) - Request/Response objects
+- [Static Files](/docs/router/functional-routing/static-files) - Serving static assets

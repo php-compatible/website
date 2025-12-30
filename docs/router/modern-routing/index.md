@@ -69,15 +69,15 @@ Router::run(function() {
 
 ## Topics
 
-- [Getting Started](getting-started) - Installation and server configuration
-- [HTTP Methods](http-methods) - GET, POST, PUT, DELETE, etc.
-- [URL Matching](url-matching) - Static paths and parameters
-- [Route Groups](route-groups) - Organize routes with prefixes
-- [Request Handling](request-handling) - JSON, forms, files, headers
-- [Response Helpers](response-helpers) - JSON, HTML, automatic conversion
-- [Error Handling](error-handling) - Exceptions and error responses
-- [Middleware](middleware) - Authentication, logging, etc.
-- [Controllers](controllers) - Closures, classes, and invokables
-- [Advanced Patterns](advanced-patterns) - Subsites, redirects, organization
-- [PSR-7 Style](psr7-style) - Full Request/Response reference
-- [Static Files](static-files) - Serving static assets
+- [Getting Started](/docs/router/modern-routing/getting-started) - Installation and server configuration
+- [HTTP Methods](/docs/router/modern-routing/http-methods) - GET, POST, PUT, DELETE, etc.
+- [URL Matching](/docs/router/modern-routing/url-matching) - Static paths and parameters
+- [Route Groups](/docs/router/modern-routing/route-groups) - Organize routes with prefixes
+- [Request Handling](/docs/router/modern-routing/request-handling) - JSON, forms, files, headers
+- [Response Helpers](/docs/router/modern-routing/response-helpers) - JSON, HTML, automatic conversion
+- [Error Handling](/docs/router/modern-routing/error-handling) - Exceptions and error responses
+- [Middleware](/docs/router/modern-routing/middleware) - Authentication, logging, etc.
+- [Controllers](/docs/router/modern-routing/controllers) - Closures, classes, and invokables
+- [Advanced Patterns](/docs/router/modern-routing/advanced-patterns) - Subsites, redirects, organization
+- [PSR-7 Style](/docs/router/modern-routing/psr7-style) - Full Request/Response reference
+- [Static Files](/docs/router/modern-routing/static-files) - Serving static assets

@@ -75,15 +75,15 @@ file_router(function() {
 
 ## Topics
 
-- [Getting Started](getting-started) - Installation and server configuration
-- [HTTP Methods](http-methods) - Match GET, POST, PUT, DELETE, etc.
-- [URL Matching](url-matching) - Static paths and parameters
-- [Route Groups](route-groups) - Organize routes with prefixes
-- [Request Handling](request-handling) - JSON, forms, files, headers
-- [Response Helpers](response-helpers) - JSON, HTML, downloads
-- [Error Handling](error-handling) - Exceptions and error responses
-- [Middleware](middleware) - Authentication, logging, etc.
-- [Controllers](controllers) - Closures, classes, and invokables
-- [Server Configuration](server-config) - Detailed server setup
-- [PSR-7 Style](psr7-style) - Request/Response objects
-- [Static Files](static-files) - Serving static assets
+- [Getting Started](/docs/router/file-based-routing/getting-started) - Installation and server configuration
+- [HTTP Methods](/docs/router/file-based-routing/http-methods) - Match GET, POST, PUT, DELETE, etc.
+- [URL Matching](/docs/router/file-based-routing/url-matching) - Static paths and parameters
+- [Route Groups](/docs/router/file-based-routing/route-groups) - Organize routes with prefixes
+- [Request Handling](/docs/router/file-based-routing/request-handling) - JSON, forms, files, headers
+- [Response Helpers](/docs/router/file-based-routing/response-helpers) - JSON, HTML, downloads
+- [Error Handling](/docs/router/file-based-routing/error-handling) - Exceptions and error responses
+- [Middleware](/docs/router/file-based-routing/middleware) - Authentication, logging, etc.
+- [Controllers](/docs/router/file-based-routing/controllers) - Closures, classes, and invokables
+- [Server Configuration](/docs/router/file-based-routing/server-config) - Detailed server setup
+- [PSR-7 Style](/docs/router/file-based-routing/psr7-style) - Request/Response objects
+- [Static Files](/docs/router/file-based-routing/static-files) - Serving static assets
