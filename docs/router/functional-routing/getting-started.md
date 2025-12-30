@@ -125,6 +125,35 @@ router(function() {
 });
 ```
 
+## Subsite Installation
+
+If your application is installed in a subdirectory (e.g., `/myapp/`):
+
+```php
+<?php
+require_once 'vendor/autoload.php';
+
+set_root_url('/myapp');
+
+router(function() {
+    // Routes are now relative to /myapp
+    route(method(GET), url_path('/'), function() {
+        echo 'Home'; // Matches /myapp/
+    });
+
+    route(method(GET), url_path('/users'), function() {
+        echo 'Users'; // Matches /myapp/users
+    });
+});
+```
+
+Build URLs with the root prefix:
+
+```php
+$homeUrl = root_url('/');           // Returns: /myapp/
+$usersUrl = root_url('/users');     // Returns: /myapp/users
+```
+
 ## Next Steps
 
 - [HTTP Methods](./http-methods) — Match GET, POST, PUT, DELETE

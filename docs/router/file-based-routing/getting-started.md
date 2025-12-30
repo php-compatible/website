@@ -145,6 +145,31 @@ This approach is perfect when:
 The whole point of adding this router is to prepare for future upgrades. Always use explicit HTTP methods (`GET`, `POST`, etc.) instead of `ALL` — this documents your API and makes migration easy.
 :::
 
+## Subsite Installation
+
+If your application is installed in a subdirectory (e.g., `/myapp/`):
+
+```php
+<?php
+require_once __DIR__ . '/../vendor/autoload.php';
+
+set_root_url('/myapp');
+
+file_router(function() {
+    // Routes are now relative to /myapp + file path
+    route(method(GET), url_path('/'), function() {
+        echo json_response(HTTP_OK, array('status' => 'ok'));
+    });
+});
+```
+
+Build URLs with the root prefix:
+
+```php
+$homeUrl = root_url('/');           // Returns: /myapp/
+$apiUrl = root_url('/api/users');   // Returns: /myapp/api/users
+```
+
 ## Next Steps
 
 - [HTTP Methods](./http-methods) — Match GET, POST, PUT, DELETE

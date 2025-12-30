@@ -198,6 +198,37 @@ Router::group('/api', function() {
 });
 ```
 
+## Subsite Installation
+
+If your application is installed in a subdirectory (e.g., `/myapp/`):
+
+```php
+<?php
+require_once 'vendor/autoload.php';
+
+use PhpCompatible\Router\Router;
+
+set_root_url('/myapp');
+
+Router::run(function() {
+    // Routes are now relative to /myapp
+    Router::get('/', function() {
+        return 'Home'; // Matches /myapp/
+    });
+
+    Router::get('/users', function() {
+        return array('users' => array()); // Matches /myapp/users
+    });
+});
+```
+
+Build URLs with the root prefix:
+
+```php
+$homeUrl = root_url('/');           // Returns: /myapp/
+$usersUrl = root_url('/users');     // Returns: /myapp/users
+```
+
 ## Next Steps
 
 - [HTTP Methods](./http-methods) — GET, POST, PUT, DELETE, etc.

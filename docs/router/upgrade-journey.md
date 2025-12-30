@@ -136,7 +136,7 @@ When you specify methods explicitly:
 
 ## Next Steps
 
-1. **[Installation](./installation)** — Get the router installed
+1. **[Installation](./installation)** — Install the router and choose your routing style
 2. **Choose your routing style:**
    - [File-Based Routing](./file-based-routing/) — For existing PHP file structures
    - [Functional Routing](./functional-routing/) — For centralized, function-based routes
