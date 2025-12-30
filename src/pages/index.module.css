@@ -32,13 +32,15 @@
   max-width: 1100px;
   border-collapse: collapse;
   margin: 0 auto;
+  table-layout: fixed;
 }
 
 .packagesTable th,
 .packagesTable td {
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   text-align: left;
   border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  vertical-align: middle;
 }
 
 .packagesTable th {
@@ -50,9 +52,46 @@
   background-color: var(--ifm-color-emphasis-100);
 }
 
+.colPackage {
+  width: 220px;
+  white-space: nowrap;
+}
+
+.colDescription {
+  width: auto;
+}
+
+.colLinks {
+  width: 180px;
+  white-space: nowrap;
+}
+
+.linksCell {
+  display: flex;
+  gap: 0.5rem;
+}
+
 @media screen and (max-width: 768px) {
+  .packagesTable {
+    table-layout: auto;
+  }
+
   .packagesTable th,
   .packagesTable td {
     padding: 0.75rem 0.5rem;
+  }
+
+  .colPackage {
+    width: auto;
+    white-space: normal;
+  }
+
+  .colLinks {
+    width: auto;
+  }
+
+  .linksCell {
+    flex-direction: column;
+    gap: 0.25rem;
   }
 }

@@ -39,25 +39,27 @@ function PackagesTable() {
         <table className={styles.packagesTable}>
           <thead>
             <tr>
-              <th>Package</th>
-              <th>Description</th>
-              <th>Links</th>
+              <th className={styles.colPackage}>Package</th>
+              <th className={styles.colDescription}>Description</th>
+              <th className={styles.colLinks}>Links</th>
             </tr>
           </thead>
           <tbody>
             {PackageList.map((pkg, idx) => (
               <tr key={idx}>
-                <td>
+                <td className={styles.colPackage}>
                   <code>php-compatible/{pkg.name}</code>
                 </td>
-                <td>{pkg.description}</td>
-                <td>
-                  <Link to={pkg.docs} className="button button--sm button--primary margin-right--sm">
-                    Docs
-                  </Link>
-                  <Link href={pkg.github} className="button button--sm button--secondary">
-                    GitHub
-                  </Link>
+                <td className={styles.colDescription}>{pkg.description}</td>
+                <td className={styles.colLinks}>
+                  <div className={styles.linksCell}>
+                    <Link to={pkg.docs} className="button button--sm button--primary">
+                      Docs
+                    </Link>
+                    <Link href={pkg.github} className="button button--sm button--secondary">
+                      GitHub
+                    </Link>
+                  </div>
                 </td>
               </tr>
             ))}
