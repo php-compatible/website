@@ -117,7 +117,7 @@ const config: Config = {
           items: [
             {
               label: 'Enum',
-              to: '/docs/enum',
+              to: '/docs/category/enum',
             },
           ],
         },
