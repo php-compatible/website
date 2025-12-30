@@ -128,7 +128,7 @@ router(function() {
 ```
 
 :::tip Templates
-For a PHP 5.5+ compatible templating solution, see [php-compatible/templates](/docs/category/templates).
+For a blazing fast PHP templating solution, see [php-compatible/templates](/docs/category/templates).
 :::
 
 ## Single Action Controllers
