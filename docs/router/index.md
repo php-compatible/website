@@ -26,61 +26,10 @@ You're maintaining a PHP application that's been around for years. The codebase 
 
 This router meets you where you are. Whether you're on PHP 5.5 or PHP 8.5, you get the same clean, expressive API. No conditional syntax, no version-specific features — just routing that works.
 
-## Your Upgrade Journey
-
-This router supports developers at every stage of modernization:
-
-| Stage | PHP Version | What You Get |
-|-------|-------------|--------------|
-| **Legacy Cleanup** | 5.5+ | Consolidate scattered routes into clean definitions |
-| **Adding Structure** | 7.0+ | Route groups, middleware, organized code |
-| **Modern Patterns** | 7.4+ | PSR-7 style request/response objects |
-| **Framework Ready** | 8.0+ | Clean patterns ready for Laravel/Symfony migration |
-
 ## Installation
 
 ```bash
 composer require php-compatible/router
-```
-
-## Quick Start
-
-### Functional Style (PHP 5.5+)
-
-```php
-<?php
-require_once 'vendor/autoload.php';
-
-router(function() {
-    route(method(GET), url_path('/'), function() {
-        echo json_response(HTTP_OK, array('message' => 'Hello World'));
-    });
-
-    route(method(GET), url_path_params('/users/:id'), function() {
-        $id = $_GET[':id'];
-        echo json_response(HTTP_OK, array('user_id' => $id));
-    });
-});
-```
-
-### Modern Class Style (PHP 7.0+)
-
-```php
-<?php
-require_once 'vendor/autoload.php';
-
-use PhpCompatible\Router\Router;
-
-Router::run(function() {
-    Router::get('/', function() {
-        return array('message' => 'Hello World');
-    });
-
-    Router::get('/users/:id', function($request) {
-        $id = $request->getParam('id');
-        return array('user_id' => $id);
-    });
-});
 ```
 
 ## Features
@@ -97,16 +46,6 @@ Router::run(function() {
 
 | Approach | Best For | Style |
 |----------|----------|-------|
-| [Functional Routing](./functional-routing) | Full control, centralized routes | `router()`, `route()`, `url_path()` |
 | [File-Based Routing](./file-based-routing) | Legacy projects with existing PHP files | `file_router()` in each file |
+| [Functional Routing](./functional-routing) | Full control, centralized routes | `router()`, `route()`, `url_path()` |
 | [Modern Routing](./modern-routing) | Clean syntax, new projects | `Router::get()`, `Router::post()` |
-
-## Documentation
-
-- [Installation](./installation) — Setup and server configuration
-- [Functional Routing](./functional-routing) — Full control with functions
-- [File-Based Routing](./file-based-routing) — For existing PHP file structures
-- [Modern Routing](./modern-routing) — Class-based `Router::` syntax
-- [Static File Routing](./static-routing) — Serve CSS, JS, images
-- [PSR-7 Style Controllers](./psr7-style) — Request/Response objects
-- [API Reference](./api-reference) — Complete reference

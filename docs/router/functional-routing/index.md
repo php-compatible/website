@@ -92,6 +92,7 @@ routerGroup('/api', function() {
 
 ## Topics
 
+- [Getting Started](./getting-started) - Installation and server configuration
 - [HTTP Methods](./http-methods) - Match GET, POST, PUT, DELETE, etc.
 - [URL Matching](./url-matching) - Static paths, wildcards, and parameters
 - [Route Groups](./route-groups) - Organize routes with prefixes
@@ -101,3 +102,5 @@ routerGroup('/api', function() {
 - [Middleware](./middleware) - Authentication, logging, etc.
 - [Controllers](./controllers) - Closures, classes, and invokables
 - [Advanced Patterns](./advanced-patterns) - Conditionals, priority, subsites
+- [PSR-7 Style](./psr7-style) - Request/Response objects
+- [Static Files](./static-files) - Serving static assets

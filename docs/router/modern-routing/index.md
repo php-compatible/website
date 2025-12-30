@@ -5,7 +5,7 @@ sidebar_label: Overview
 
 # Modern Routing
 
-The `Router` class provides a clean, Laravel-style syntax for defining routes. This approach is ideal for new projects or when centralizing routes in a single file.
+The `Router` class provides a clean, Laravel-style syntax for defining routes with automatic PSR-7 request injection. This approach is ideal for new projects or when centralizing routes in a single file.
 
 ## When to Use Modern Routing
 
@@ -13,6 +13,7 @@ The `Router` class provides a clean, Laravel-style syntax for defining routes. T
 - **Route Files** - Centralizing routes in `routes/web.php` or `routes/api.php`
 - **Cleaner Syntax** - Prefer `Router::get()` over `route(method(GET), url_path())`
 - **Automatic Parameter Detection** - No need for separate `url_path_params()`
+- **PSR-7 Request Injection** - Handlers receive a `ServerRequest` automatically
 
 ## Basic Usage
 
@@ -31,8 +32,10 @@ Router::run(function() {
         return 'About';
     });
 
-    Router::get('/api/users', function() {
-        return array('users' => array());  // Auto-converted to JSON
+    // Automatic request injection when handler accepts a parameter
+    Router::get('/api/users/:id', function($request) {
+        $id = $request->getParam('id');
+        return array('user_id' => $id);  // Auto-converted to JSON
     });
 });
 ```
@@ -66,6 +69,7 @@ Router::run(function() {
 
 ## Topics
 
+- [Getting Started](./getting-started) - Installation and server configuration
 - [HTTP Methods](./http-methods) - GET, POST, PUT, DELETE, etc.
 - [URL Matching](./url-matching) - Static paths and parameters
 - [Route Groups](./route-groups) - Organize routes with prefixes
@@ -75,3 +79,5 @@ Router::run(function() {
 - [Middleware](./middleware) - Authentication, logging, etc.
 - [Controllers](./controllers) - Closures, classes, and invokables
 - [Advanced Patterns](./advanced-patterns) - Subsites, redirects, organization
+- [PSR-7 Style](./psr7-style) - Full Request/Response reference
+- [Static Files](./static-files) - Serving static assets
