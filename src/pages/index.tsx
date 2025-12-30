@@ -27,6 +27,12 @@ const PackageList: PackageItem[] = [
     github: 'https://github.com/php-compatible/enum',
     docs: '/docs/category/enum',
   },
+  {
+    name: 'templates',
+    description: 'Blazing fast PHP templating with zero dependencies. Native PHP execution at full speed.',
+    github: 'https://github.com/php-compatible/templates',
+    docs: '/docs/category/templates',
+  },
 ];
 
 function PackagesTable() {
@@ -78,7 +84,7 @@ function HomepageHeader() {
           Mission
         </Heading>
         <p className="hero__subtitle">
-          "To make upgrading old PHP easy and simple."
+          "Make upgrading old PHP projects easy and simple."
         </p>
       </div>
     </header>
