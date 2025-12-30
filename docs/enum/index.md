@@ -6,7 +6,7 @@ sidebar_position: 1
 
 [![CI](https://github.com/php-compatible/enum/actions/workflows/ci.yml/badge.svg)](https://github.com/php-compatible/enum/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/php-compatible/enum/branch/main/graph/badge.svg)](https://codecov.io/gh/php-compatible/enum)
-[![License](https://img.shields.io/github/license/php-compatible/enum)](https://github.com/php-compatible/enum/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/php-compatible/enum/blob/main/LICENSE)
 
 **PHP 8-style enums for PHP 7.2+** - Write enums today, upgrade to native enums tomorrow.
 
