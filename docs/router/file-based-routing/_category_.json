@@ -1,0 +1,8 @@
+{
+  "label": "File-Based Routing",
+  "position": 4,
+  "link": {
+    "type": "doc",
+    "id": "router/file-based-routing/index"
+  }
+}
