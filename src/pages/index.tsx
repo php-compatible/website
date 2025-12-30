@@ -72,13 +72,6 @@ function HomepageHeader() {
         <p className="hero__subtitle">
           To help give developers an automated upgrade path, so that old PHP projects can be upgraded to the latest PHP standards with ease.
         </p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/enum">
-            Get Started
-          </Link>
-        </div>
       </div>
     </header>
   );
