@@ -33,6 +33,10 @@ Router::any('/webhook', function() {
 });
 ```
 
+:::tip Prefer Explicit Methods
+While `Router::any()` is available, prefer explicit methods like `Router::get()`, `Router::post()`, etc. This documents your API contract and makes future framework migrations easier.
+:::
+
 ## Match Multiple Methods
 
 ```php

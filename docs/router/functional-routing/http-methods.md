@@ -21,13 +21,17 @@ route(method(OPTIONS), url_path('/users'), $handler);
 
 ## Match Any Method
 
-Pass `true` as the first argument to match any HTTP method:
+Use the `ALL` constant to match any HTTP method:
 
 ```php
-route(true, url_path('/webhook'), function() {
+route(ALL, url_path('/webhook'), function() {
     // Handles any HTTP method
 });
 ```
+
+:::tip Prefer Explicit Methods
+While `ALL` is available, prefer explicit methods like `GET`, `POST`, etc. This documents your API contract and makes future framework migrations easier.
+:::
 
 ## Custom Method Logic
 

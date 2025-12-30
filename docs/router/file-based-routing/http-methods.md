@@ -26,14 +26,47 @@ file_router(function() {
 
 ## Match Any Method
 
-Pass `true` as the first argument:
+:::caution Avoid Using ALL
+While the `ALL` constant exists for matching any HTTP method, **you should avoid using it**. The whole point of adding this router to your legacy files is to make future upgrades easier. When you specify explicit methods like `GET`, `POST`, `PUT`, `DELETE`, you're documenting your API contract and making it easy to migrate to Laravel, Symfony, or other frameworks later.
+
+If your existing code handles multiple methods, take the time to separate them now:
+:::
+
+**Instead of this:**
+```php
+// DON'T DO THIS - defeats the purpose of the router
+file_router(function() {
+    route(ALL, url_path('/'), function() {
+        // Handles any HTTP method - but what methods does it actually support?
+    });
+});
+```
+
+**Do this:**
+```php
+// DO THIS - explicit methods make migration easy
+file_router(function() {
+    route(method(GET), url_path('/'), function() {
+        echo json_response(HTTP_OK, array('users' => get_all_users()));
+    });
+
+    route(method(POST), url_path('/'), function() {
+        $data = json_body();
+        echo json_response(HTTP_CREATED, array('user' => create_user($data)));
+    });
+});
+```
+
+If you truly need to handle any method (e.g., for webhooks), use `ALL` but document why:
 
 ```php
 file_router(function() {
-    route(true, url_path('/webhook'), function() {
-        // Handles any HTTP method
+    // Webhook endpoint - external service may use various methods
+    route(ALL, url_path('/webhook'), function() {
         $method = $_SERVER['REQUEST_METHOD'];
-        echo json_response(HTTP_OK, array('method' => $method));
+        $payload = json_body();
+        log_webhook($method, $payload);
+        echo json_response(HTTP_OK, array('received' => true));
     });
 });
 ```
