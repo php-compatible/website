@@ -9,9 +9,9 @@ tags: [router, opinion]
 
 # How File-Based Routing Is *Not* Modern Best Practice
 
-A few months ago, I **left a** role maintaining a legacy PHP 5 codebase. The kind of system where "working fine" meant "nobody dares touch it" and maintenance was just crossing your fingers every time you merged.
+A few months ago, I left a role maintaining a legacy PHP 5 codebase. The kind of system where "working fine" meant "nobody dares touch it" and maintenance was just crossing your fingers every time you merged. On paper, the architecture sounded simple: file-based routing. In reality, it was chaos.
 
-On paper, the architecture sounded simple: file-based routing. In reality, it was chaos.
+<!-- truncate -->
 
 Each PHP file represented an endpoint. Open any one of them and you’d find logic for multiple HTTP verbs living together in the same file. `GET` requests, `POST` submissions, validation, database writes, redirects, and HTML rendering were all intertwined. The control flow depended entirely on `if` statements scattered between massive blocks of code:
 

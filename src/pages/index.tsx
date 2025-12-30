@@ -1,4 +1,4 @@
-import type {ReactNode} from 'react';
+import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -13,6 +13,68 @@ type PackageItem = {
   github: string;
   docs: string;
 };
+
+type RelatedPackage = {
+  name: string;
+  description: string;
+  url: string;
+  category: string;
+};
+
+const RelatedPackages: RelatedPackage[] = [
+  // Routing
+  {
+    name: 'FastRoute',
+    description: 'Fast regex-based router by nikic. The foundation many routers are built on.',
+    url: 'https://github.com/nikic/FastRoute',
+    category: 'Routing',
+  },
+  {
+    name: 'League Route',
+    description: 'PSR-7/PSR-15 routing and dispatch built on FastRoute. Full middleware support.',
+    url: 'https://route.thephpleague.com/',
+    category: 'Routing',
+  },
+  // Enums
+  {
+    name: 'myclabs/php-enum',
+    description: 'The enum PHP was missing. Type-hintable enums for PHP 7.3+.',
+    url: 'https://github.com/myclabs/php-enum',
+    category: 'Enums',
+  },
+  // Templates
+  {
+    name: 'Plates',
+    description: 'Native PHP template system by The PHP League. Twig-inspired without the compilation.',
+    url: 'https://platesphp.com/',
+    category: 'Templates',
+  },
+  {
+    name: 'Latte',
+    description: 'The safest PHP template engine from Nette. Context-aware XSS protection.',
+    url: 'https://latte.nette.org/',
+    category: 'Templates',
+  },
+  // Upgrading
+  {
+    name: 'Rector',
+    description: 'Automated refactoring for PHP 5.3+. Upgrade entire codebases in days, not months.',
+    url: 'https://getrector.com/',
+    category: 'Upgrading',
+  },
+  {
+    name: 'Symfony Polyfill',
+    description: 'Backports features from latest PHP versions. Low overhead, loaded on-demand.',
+    url: 'https://github.com/symfony/polyfill',
+    category: 'Upgrading',
+  },
+  {
+    name: 'PHPCompatibility',
+    description: 'PHP_CodeSniffer sniffs to check version compatibility before upgrading.',
+    url: 'https://github.com/PHPCompatibility/PHPCompatibility',
+    category: 'Upgrading',
+  },
+];
 
 const PackageList: PackageItem[] = [
   {
@@ -76,6 +138,51 @@ function PackagesTable() {
   );
 }
 
+function RelatedPackagesTable() {
+  const categories = [...new Set(RelatedPackages.map(pkg => pkg.category))];
+
+  return (
+    <section className={styles.packages}>
+      <div className="container">
+        <Heading as="h2" className="text--center margin-bottom--lg">
+          Awesome Related Packages
+        </Heading>
+        <table className={styles.packagesTable}>
+          <thead>
+            <tr>
+              <th className={styles.colPackage}>Package</th>
+              <th className={styles.colDescription}>Description</th>
+              <th className={styles.colLinks}>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            {categories.map((category) => (
+              <React.Fragment key={category}>
+                <tr className={styles.categoryRow}>
+                  <td colSpan={3} className={styles.categoryCell}>
+                    <strong>{category}</strong>
+                  </td>
+                </tr>
+                {RelatedPackages.filter(pkg => pkg.category === category).map((pkg, idx) => (
+                  <tr key={`${category}-${idx}`}>
+                    <td className={styles.colPackage}>{pkg.name}</td>
+                    <td className={styles.colDescription}>{pkg.description}</td>
+                    <td className={styles.colLinks}>
+                      <Link href={pkg.url} className="button button--sm button--secondary">
+                        Visit
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </React.Fragment>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
+
 function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
@@ -100,6 +207,7 @@ export default function Home(): ReactNode {
       <HomepageHeader />
       <main>
         <PackagesTable />
+        <RelatedPackagesTable />
       </main>
     </Layout>
   );
