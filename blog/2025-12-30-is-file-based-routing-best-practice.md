@@ -1,13 +1,13 @@
 ---
-slug: file-based-routing-is-not-modern-best-practice
-title: File-Based Routing Is Not Modern Best Practice
+slug: is-file-based-routing-best-practice
+title: Is File-Based Routing Best Practice?
 authors:
   - name: PHP Compatible Team
     url: https://github.com/php-compatible
 tags: [router, opinion]
 ---
 
-# How File-Based Routing Is *Not* Modern Best Practice
+# Is File-Based Routing Best Practice?
 
 A few months ago, I left a role maintaining a legacy PHP 5 codebase. The kind of system where "working fine" meant "nobody dares touch it" and maintenance was just crossing your fingers every time you merged. On paper, the architecture sounded simple: file-based routing. In reality, it was chaos.
 
