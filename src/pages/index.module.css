@@ -1,0 +1,57 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.packages {
+  padding: 3rem 0;
+}
+
+.packagesTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.packagesTable th,
+.packagesTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.packagesTable th {
+  font-weight: 600;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.packagesTable tr:hover {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+@media screen and (max-width: 768px) {
+  .packagesTable th,
+  .packagesTable td {
+    padding: 0.75rem 0.5rem;
+  }
+}
