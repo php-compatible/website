@@ -77,7 +77,11 @@ const config: Config = {
           editUrl:
             'https://github.com/php-compatible/website/tree/main/',
         },
-        blog: false,
+        blog: {
+          showReadingTime: true,
+          editUrl:
+            'https://github.com/php-compatible/website/tree/main/',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -101,6 +105,11 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Docs',
+        },
+        {
+          to: '/blog',
+          label: 'Blog',
+          position: 'left',
         },
         {
           href: 'https://github.com/php-compatible',
