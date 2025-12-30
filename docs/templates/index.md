@@ -7,6 +7,7 @@ slug: /category/templates
 # Templates
 
 [![CI](https://github.com/php-compatible/templates/actions/workflows/ci.yml/badge.svg)](https://github.com/php-compatible/templates/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/php-compatible/templates/branch/main/graph/badge.svg)](https://codecov.io/gh/php-compatible/templates)
 [![PHP Version](https://img.shields.io/badge/php-5.5%20--%208.5-8892BF.svg)](https://php.net/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/php-compatible/templates/blob/main/LICENSE)
 
