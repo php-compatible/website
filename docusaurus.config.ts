@@ -116,6 +116,10 @@ const config: Config = {
           title: 'Packages',
           items: [
             {
+              label: 'Router',
+              to: '/docs/category/router',
+            },
+            {
               label: 'Enum',
               to: '/docs/category/enum',
             },

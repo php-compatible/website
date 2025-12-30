@@ -16,6 +16,12 @@ type PackageItem = {
 
 const PackageList: PackageItem[] = [
   {
+    name: 'router',
+    description: 'Modern routing for legacy PHP applications. Clean up messy routes today, migrate to frameworks tomorrow.',
+    github: 'https://github.com/php-compatible/router',
+    docs: '/docs/category/router',
+  },
+  {
     name: 'enum',
     description: 'PHP 8-style enums for PHP 7.2+ with migration tools',
     github: 'https://github.com/php-compatible/enum',
@@ -70,7 +76,7 @@ function HomepageHeader() {
           Mission
         </Heading>
         <p className="hero__subtitle">
-          To help give developers an automated upgrade path, so that old PHP projects can be upgraded to the latest PHP standards with ease.
+          "To make upgrading old PHP easy and simple."
         </p>
       </div>
     </header>
