@@ -2,7 +2,7 @@
   "label": "Enum",
   "position": 1,
   "link": {
-    "type": "generated-index",
-    "description": "PHP 8-style enums for PHP 7.2+ with migration tools"
+    "type": "doc",
+    "id": "enum/index"
   }
 }

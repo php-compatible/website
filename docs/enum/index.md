@@ -1,8 +1,9 @@
 ---
-sidebar_position: 1
+sidebar_label: Overview
+slug: /category/enum
 ---
 
-# Getting Started
+# Enum
 
 [![CI](https://github.com/php-compatible/enum/actions/workflows/ci.yml/badge.svg)](https://github.com/php-compatible/enum/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/php-compatible/enum/branch/main/graph/badge.svg)](https://codecov.io/gh/php-compatible/enum)
